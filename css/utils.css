@@ -1,0 +1,19 @@
+body
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-white
+{
+    color: white;
+}
+
+.text-black
+{
+    color: black;
+}
+
+.underline
+{
+    border-bottom: 1px solid white;
+}

@@ -1,0 +1,369 @@
+:root
+{
+    /* Colors */
+    --light-brown: wheat;
+    --dark-brown: burlywood;
+    --light-blue: #87CEFA;
+    --dark-blue: #1E90FF;
+    --light-red: #F08080;
+    --dark-red: #DC143C;
+    --light-green: #D0F0C0;
+    --dark-green: #228B22;
+    --light-gray: #D3D3D3;
+    --dark-gray: #A9A9A9;
+    /* Square */
+    --square-size: min(4.5rem, 12vw);
+}
+
+.body
+{
+    padding: 0;
+    margin: 0;
+    background-image: url('../images/wallpapers/chess.png');
+    overflow-x: hidden;
+}
+
+/* ---------------------------- */
+/* ---------- COLORS ---------- */
+/* ---------------------------- */
+
+.bg-white
+{
+    background: hsl(0, 0%, 90%);
+}
+
+.bg-blue-clock
+{
+    background: hsl(240, 80%, 80%);
+}
+
+.bg-green-clock
+{
+    background: hsl(120, 30%, 75%);
+}
+
+.bg-red-clock
+{
+    background: hsl(0, 80%, 80%);
+}
+
+.bg-gray-clock
+{
+    background: hsl(0, 0%, 80%);
+}
+
+.light-brown
+{
+    background: var(--light-brown);
+}
+
+.dark-brown
+{
+    background: var(--dark-brown);
+}
+
+.light-blue
+{
+    background: var(--light-blue);
+}
+
+.dark-blue
+{
+    background: var(--dark-blue);
+}
+
+.light-red
+{
+    background: var(--light-red);
+}
+
+.dark-red
+{
+    background: var(--dark-red);
+}
+
+.light-green
+{
+    background: var(--light-green);
+}
+
+.dark-green
+{
+    background: var(--dark-green);
+}
+
+.light-gray
+{
+    background: var(--light-gray);
+}
+
+.dark-gray
+{
+    background: var(--dark-gray);
+}
+
+/* ------------------------------ */
+/* ---------- SECTIONS ---------- */
+/* ------------------------------ */
+
+.chess
+{
+    display: flex;
+    justify-content: center;
+}
+
+.game
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem hsl(0, 0%, 50%);
+}
+
+/* Chessboard + Progress bar */
+.game > div:nth-child(3)
+{
+    display: flex;
+}
+
+@media (min-width: 66rem)
+{
+    .game
+    {
+        flex-wrap: wrap;
+        height: 36rem;
+        width: 64rem;
+    }
+
+    .game > div:nth-child(4)
+    {
+        order: 1;
+    }
+
+    .game > div:nth-child(1)
+    {
+        order: 2;
+        width: 26rem;
+    }
+
+    .game > div:nth-child(2)
+    {
+        order: 3;
+        flex: 1;
+        width: 26rem;
+    }
+
+    .game > div:nth-child(5)
+    {
+        order: 4;
+        width: 26rem;
+    }
+
+    .game > div:nth-child(4)
+    {
+        order: 5;
+        flex: 1;
+        width: 26rem;
+    }
+
+    .game > div:nth-child(6)
+    {
+        order: 6;
+        width: 26rem;
+    }
+}
+
+.options
+{
+    background-color: hsla(0,0%,75%, 0.5);
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+    min-width: 100vw;
+    margin-block: 2.5rem;
+    padding-block: 1.5rem;
+}
+
+/* -------------------------------- */
+/* ---------- CHESSBOARD ---------- */
+/* -------------------------------- */
+
+.chessboard
+{
+    display : grid;
+    grid-template-columns: repeat(8, var(--square-size));
+    grid-template-rows: repeat(8, var(--square-size));
+    background: white;
+}
+
+.chessboard > div
+{
+    display: flex;
+}
+
+.chessboard > span
+{
+    position: absolute;
+}
+
+.legal-square
+{
+    opacity: 0.7;
+}
+
+/* --------------------------------- */
+/* ---------- PLAYER DATA ---------- */
+/* --------------------------------- */
+
+.player-data
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+    padding-inline: 1rem;
+    background: hsl(0, 0%, 90%);
+}
+
+.player-data > div
+{
+    display: flex;
+    align-items: center;
+}
+
+.flag
+{
+    margin-inline: 0.75rem;
+}
+
+/* ----------------------------- */
+/* ---------- BUTTONS ---------- */
+/* ----------------------------- */
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    background: hsl(0, 0%, 90%);
+}
+
+@media (min-width: 66rem)
+{
+    .buttons
+    {
+        border-block: 0.05rem solid hsla(0, 0%, 75%);
+    }
+}
+
+.buttons > div
+{
+    display: flex;
+}
+
+.buttons > div > div
+{
+    position: relative;
+    display: inline-block;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+}
+
+.buttons > div > div:hover
+{
+    cursor: pointer;
+    background: hsl(240, 20%, 80%);
+}
+
+.tooltip
+{
+    visibility: hidden;
+    width: 90px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 50%;
+    margin-left: -50px;
+}
+  
+.tooltip::after
+{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+  
+.buttons > div > div:hover > .tooltip
+{
+    visibility: visible;
+}
+
+/* ---------------------------- */
+/* ---------- CLOCKS ---------- */
+/* ---------------------------- */
+
+.clock
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.clock time
+{
+    font-size: 4rem;
+}
+
+/* -------------------------------------- */
+/* ---------- END GAME MESSAGE ---------- */
+/* -------------------------------------- */
+
+/* ---------------------------------- */
+/* ---------- PROGRESS BAR ---------- */
+/* ---------------------------------- */
+
+.bg-light-progress-bar
+{
+    background: hsl(0, 0%, 85%);
+}
+
+.bg-dark-progress-bar
+{
+    background: hsl(0, 0%, 35%);
+}
+
+.top-progress-bar
+{
+    height: 100%;
+    width: min(2rem, 5vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+}
+
+@media (max-width: 40rem)
+{
+    .top-progress-bar
+    {
+        display: none;
+    }
+}
+
+.bottom-progress-bar
+{
+    text-align: center;
+}
+
+

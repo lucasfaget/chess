@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CHESS</title>
+        <link href="/chess/css/utils.css" rel="stylesheet">
+        <link href="/chess/css/nav.css" rel="stylesheet">
+        <link href="/chess/css/root.css" rel="stylesheet">
+        <link href="/chess/css/chessSetupGame.css" rel="stylesheet">
+    </head>
+    <body class="body">
+
+        <!-- Top of the page -->
+        <header id="header">
+            <!-- Nav bar -->
+        </header>
+
+        <div class="main">
+            <div class="modal">
+                <div class="modal-header">
+                    <span>Game setup</span>
+                </div>
+                <div class="modal-body">
+                    <select class="modal-select">
+                        <option selected value="std">Standard</option>
+                        <option value="960">Chess 960 (Fischer Random)</option>
+                    </select>
+                    <div class="modal-grid">
+                        <div disabled="false" onclick="setupGame(1,0)">
+                            <span value="1+0">1+0</span>
+                            <span value="1+0">Bullet</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(2,1)">
+                            <span>2+1</span>
+                            <span>Bullet</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(3,0)">
+                            <span>3+0</span>
+                            <span>Blitz</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(3,2)">
+                            <span>3+2</span>
+                            <span>Blitz</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(5,0)">
+                            <span>5+0</span>
+                            <span>Blitz</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(5,3)">
+                            <span>5+3</span>
+                            <span>Blitz</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(10,0)">
+                            <span>10+0</span>
+                            <span>Rapid</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(10,5)">
+                            <span>10+5</span>
+                            <span>Rapid</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(15,10)">
+                            <span>15+10</span>
+                            <span>Rapid</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(30,0)">
+                            <span>30+0</span>
+                            <span>Classical</span>
+                        </div>
+                        <div disabled="false" onclick="setupGame(30,20)">
+                            <span>30+20</span>
+                            <span>Classical</span>
+                        </div>
+                        <div disabled="true">
+                            <span>Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+<script type="text/javascript" src="/chess/js/nav.js"></script>
+<script type="text/javascript" src="/chess/js/chessSetupGame.js"></script>
